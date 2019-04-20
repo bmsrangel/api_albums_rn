@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <title>API de Álbums</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #eee
+            }
+            table {
+                width: 80%;
+                text-align: center;
+            }
+            table, tr, td, th {
+                border: 1px solid black;
+                border-collapse: collapse;
+                height: 30px;
+            }
+            tr, td, th {
+                padding: 5px;
+            }
+            tr, td {
+                font-weight: 500;
+            }
+            th {
+                font-size: 18px;
+            }
+            .desc {
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Top Albums List</h1>
+            <h2>API para consumo em aplicações Frontend e/ou Mobile</h3>
+            <h3>Modo de uso:</h3>
+            <table>
+                <tr>
+                    <th>Método</th>
+                    <th>URL</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td>GET</td>
+                    <td><a href="https://bmsrangel-albums.herokuapp.com/api/album">https://bmsrangel-albums.herokuapp.com/api/album</a></td>
+                    <td class="desc">Retorna um objeto JSON com os álbuns cadastrados no banco de dados</td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td><a href="https://bmsrangel-albums.herokuapp.com/api/album">https://bmsrangel-albums.herokuapp.com/api/album</a></td>
+                    <td class="desc">Adiciona um álbum ao banco de dados. Necessário enviar um objeto JSON com os atributos <b>title</b>, <b>artist</b>, <b>url</b>, <b>image</b> e <b>thumbnail</b>.<br>
+                                     O atributo <b>url</b> deve conter o link HTTP de compra do álbum no site <a href="https://www.amazon.com/">https://www.amazon.com/</a>;<br>
+                                     O atributo <b>image</b> deve conter o link HTTP da imagem do álbum no site <a href="https://www.amazon.com/">https://www.amazon.com/</a>;<br>
+                                     O atributo <b>thumbnail</b> deve conter o link HTTP da imagem de perfil do artista.
+                    </td>
+                </tr>
+            </table>
+
+            <h2>Exemplo de uso do método POST:</h2>
+            <img src="templates/images/exemplo_post.PNG" alt="Exemplo de adição de álbum">
+        </div>
+    </body>
+</html>

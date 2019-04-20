@@ -18,8 +18,8 @@ class Album(db.Model):
     thumbnail = db.Column(db.String(250), nullable=False)
 
     def __init__(self, title, artist, url, image, thumbnail):
-        self.title = title
-        self.artist = artist
+        self.title = title.title()
+        self.artist = artist.title()
         self.url = url
         self.image = image
         self.thumbnail = thumbnail

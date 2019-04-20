@@ -1,10 +1,15 @@
 from flask import Flask
+from flask import render_template
 import os
 
 
 def create_app(config_filename):
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder="./templates")
     app.config.from_object(config_filename)
+
+    @app.route('/')
+    def index():
+        return render_template('index.html')
 
     from app import api_bp
     app.register_blueprint(api_bp, url_prefix='/api')
